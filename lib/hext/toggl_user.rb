@@ -20,7 +20,12 @@ module HipExt
 
     def current_activity
       time_entry = HipExt::TogglInterface.get_current_time_entry(self.api_token)
-      time_entry['data']['description'] rescue ''
+      msg = time_entry['data']['description'] rescue nil
+      pid = time_entry['data']['pid'] rescue nil
+      return '' if msg.nil? and pid.nil?
+      return "#{pid} (#{msg})" if !msg.nil? and !pid.nil?
+      return pid if !pid.nil?
+      return msg
     end
 
     private
