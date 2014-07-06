@@ -4,7 +4,7 @@ require 'faker'
 
 module HipExt
   class Toggl
-    def self.update_users_status
+    def self.update_users_statuses
       hc_users = HipExt::HipChatUser.get_users.each
 
       User.all.each do |app_user|
