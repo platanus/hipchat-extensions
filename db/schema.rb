@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140706022816) do
+ActiveRecord::Schema.define(version: 20140706203205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20140706022816) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "toggl_api_token"
   end
 
 end

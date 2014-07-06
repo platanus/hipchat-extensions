@@ -8,7 +8,6 @@ module HipExt
       return if !users or !users.has_key? 'items'
       users['items'].inject([]) do |detailed_users, user|
         u = get_user(user['id'])
-        puts u.inspect
         detailed_users << u unless u.nil?
       end
     end
