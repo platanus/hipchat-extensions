@@ -1,3 +1,6 @@
 DEV_DB_NAME=hipchat-extensions
 DEV_DB_USER=root
 DEV_DB_PASSWORD=
+HIPCHAT_AUTH_TOKEN=
+HIPCHAT_API_URL=https://api.hipchat.com/v2
+
