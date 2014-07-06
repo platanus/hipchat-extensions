@@ -20,7 +20,7 @@ module HipExt
 
     def current_activity
       time_entry = HipExt::TogglInterface.get_current_time_entry(self.api_token)
-      time_entry['data']['description'] rescue nil
+      time_entry['data']['description'] rescue ''
     end
 
     private
