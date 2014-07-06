@@ -11,6 +11,20 @@ module HipExt
       do_get('time_entries/current', _toggl_api_token)
     end
 
+    def self.get_project _pid, _toggl_api_token
+      workspaces = do_get("workspaces", _toggl_api_token)
+      return if workspaces.nil?
+      projects = []
+      workspaces.each do |ws|
+        ws_projects = do_get("workspaces/#{ws['id']}/projects", _toggl_api_token)
+        projects += ws_projects unless ws_projects.nil?
+      end
+
+      projects.each do |project|
+        return project if project['id'].to_i == _pid.to_i
+      end
+    end
+
     private
       def self.credentials _toggl_api_token
         {username: _toggl_api_token, password: "api_token"}

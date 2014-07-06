@@ -23,9 +23,12 @@ module HipExt
       msg = time_entry['data']['description'] rescue nil
       pid = time_entry['data']['pid'] rescue nil
       return '' if msg.nil? and pid.nil?
-      return "#{pid} (#{msg})" if !msg.nil? and !pid.nil?
-      return pid if !pid.nil?
-      return msg
+      return msg if pid.nil?
+      project_data = HipExt::TogglInterface.get_project(pid, self.api_token)
+      project_name = project_data['name'] rescue nil
+      return "#{project_name} (#{msg})" if !project_name.nil? and !msg.nil?
+      return msg if project_name.nil?
+      project_name
     end
 
     private
