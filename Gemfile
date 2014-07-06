@@ -17,12 +17,17 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 4.2.1' #using this version becuase this issue: https://github.com/gregbell/active_admin/pull/3251
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+gem 'devise'
+
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
