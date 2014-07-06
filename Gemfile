@@ -49,6 +49,8 @@ end
 # Use postgresql as the database for Active Record
 gem "pg"
 
+gem 'whenever', :require => false
+
 group :development, :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
